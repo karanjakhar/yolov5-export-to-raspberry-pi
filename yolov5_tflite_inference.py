@@ -1,11 +1,11 @@
 import cv2
-#import tflite_runtime.interpreter as tflite
+import tflite_runtime.interpreter as tflite
 import numpy as np
 import time
 from glob import glob
 import os
 import argparse
-import tensorflow as tf
+
 
 
 class yolov5_tflite:
@@ -125,7 +125,7 @@ class yolov5_tflite:
         #image = cv2.resize(image,(self.image_size,self.image_size))
         #input_data[0] = image.astype(np.float32)/255.0
         input_data[0] = image
-        interpreter = tf.lite.Interpreter(self.weights)
+        interpreter = tflite.Interpreter(self.weights)
         interpreter.allocate_tensors()
 
         # Get input and output tensors
