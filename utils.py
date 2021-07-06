@@ -1,4 +1,4 @@
-from PIL import Image, ImageOps
+from PIL import Image
 
 
 def letterbox_image(image, size):
