@@ -8,11 +8,13 @@ It is a two step process:
 
 ### Convert Model Weights to tflite
 
-If you don't want to install anything on your system then use this **[Google Colab](https://colab.research.google.com/drive/1oZN9azdFyrlbzeVcGaqdddJ_YVatVTJJ?usp=sharing)** (*Recommended*).  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1oZN9azdFyrlbzeVcGaqdddJ_YVatVTJJ?usp=sharing)
+
+
+**If you don't want to install anything on your system then use this [Google Colab](https://colab.research.google.com/drive/1oZN9azdFyrlbzeVcGaqdddJ_YVatVTJJ?usp=sharing) (*Recommended*).**  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1oZN9azdFyrlbzeVcGaqdddJ_YVatVTJJ?usp=sharing)
 
 
 
-And if you want to perform the conversion on your system then follow bellow instructions:
+##### And if you want to perform the conversion on your system then follow bellow instructions:
 
 I recommend create a new conda environment for this as we need python==3.7.0 for this: 
 
