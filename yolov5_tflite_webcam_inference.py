@@ -80,7 +80,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-w','--weights', type=str, default='yolov5s.pt', help='model.pt path(s)')
     parser.add_argument('-wc','--webcam', type=int, default=0, help='webcam number 0,1,2 etc.') 
-    parser.add_argument('--img_size', type=int, default=416, help='image size')  # height, width
+    parser.add_argument('--img_size', type=int, default=416, help='image size')  
     parser.add_argument('--conf_thres', type=float, default=0.25, help='object confidence threshold')
     parser.add_argument('--iou_thres', type=float, default=0.45, help='IOU threshold for NMS')
 
