@@ -59,3 +59,21 @@ Other files show examples how to use it. I have placed a tflite file and some sa
 
 
 
+**To Run Examples:** 
+
+For webcam:
+
+`python3 yolov5_tflite_webcam_inference.py -w yolov5s-fp16.tflite  `
+
+For image:
+
+`python3 yolov5_tflite_image_inference.py -w yolov5s-fp16.tflite -i images/bus.jpg`
+
+For video:
+
+`python3 yolov5_tflite_video_inference.py -w yolov5s-fp16.tflite -v <your video path>`
+
+For folder of images:
+
+`python3 yolov5_tflite_folder_of_images_inference.py -w yolov5s-fp16.tflite -f images/`
+
