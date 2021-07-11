@@ -34,7 +34,7 @@ def detect_video(weights,webcam,img_size,conf_thres,iou_thres):
             if not check:
                 break
             #frame = cv2.resize(frame,(h,w))
-            no_of_frames += 1
+            #no_of_frames += 1
             image_resized = letterbox_image(Image.fromarray(frame),size)
             image_array = np.asarray(image_resized)
 
@@ -69,7 +69,9 @@ def detect_video(weights,webcam,img_size,conf_thres,iou_thres):
             #cv2.imshow('output',frame)    
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-            print('FPS:',no_of_frames/(time.time()-start_time))
+            end_time = time.time()
+            print('FPS:',1/(end_time-start_time))
+            start_time = end_time
         out.release()
     except:
         out.release()
