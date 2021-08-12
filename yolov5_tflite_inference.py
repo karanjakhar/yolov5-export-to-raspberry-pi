@@ -12,6 +12,7 @@ class yolov5_tflite:
         self.image_size = image_size
         self.conf_thres = conf_thres
         self.iou_thres = iou_thres
+        self.interpreter = tflite.Interpreter(self.weights)
 
         with open('class_names.txt') as f:
                 self.names = [line.rstrip() for line in f]
@@ -121,17 +122,17 @@ class yolov5_tflite:
         #image = cv2.resize(image,(self.image_size,self.image_size))
         #input_data[0] = image.astype(np.float32)/255.0
         input_data[0] = image
-        interpreter = tflite.Interpreter(self.weights)
-        interpreter.allocate_tensors()
+        
+        self.interpreter.allocate_tensors()
 
         # Get input and output tensors
-        input_details = interpreter.get_input_details()
-        output_details = interpreter.get_output_details()
+        input_details = self.interpreter.get_input_details()
+        output_details = self.interpreter.get_output_details()
 
 
-        interpreter.set_tensor(input_details[0]['index'], input_data)
-        interpreter.invoke()
-        pred = interpreter.get_tensor(output_details[0]['index'])
+        self.interpreter.set_tensor(input_details[0]['index'], input_data)
+        self.interpreter.invoke()
+        pred = self.interpreter.get_tensor(output_details[0]['index'])
 
         # Denormalize xywh
         pred[..., 0] *= original_size[1]  # x
