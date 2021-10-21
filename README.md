@@ -26,11 +26,11 @@ conda activate yolov5_env
 Then run below commands and replace **yolov5s.pt** with your own model path and also change **yolov5s.yaml** accordingly. 
 
 ```bash
-git clone https://github.com/karanjakhar/yolov5.git
+git clone https://github.com/ultralytics/yolov5.git
 cd yolov5
 pip3 install tensorflow==2.3.1
 pip install -r requirements.txt
-python3 models/tf.py --weight yolov5s.pt --cfg models/yolov5s.yaml --img 416 
+python3 export.py --weights yolov5s.pt --img 418 --batch 1 --include onnx tflite
 ```
 
 
