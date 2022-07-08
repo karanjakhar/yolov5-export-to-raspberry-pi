@@ -40,7 +40,8 @@ def detect_video(weights,webcam,img_size,conf_thres,iou_thres):
 
             normalized_image_array = image_array.astype(np.float32) / 255.0
             result_boxes, result_scores, result_class_names = yolov5_tflite_obj.detect(normalized_image_array)
-            result_boxes = scale_coords(size,np.array(result_boxes),(w,h))
+            if len(result_boxes) > 0:
+                result_boxes = scale_coords(size,np.array(result_boxes),(w,h))
 
             font = cv2.FONT_HERSHEY_SIMPLEX 
             
